@@ -1,0 +1,257 @@
+body {
+    color: rgb(9, 139, 244);
+    background-image: url("https://p4.wallpaperbetter.com/wallpaper/191/774/454/lawn-grass-green-thick-wallpaper-preview.jpg");
+    margin: 0;
+}
+nav {
+    justify-content: center;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height: 78px;
+}
+
+nav a {
+    text-align: center;
+    border: 2px solid  rgb(0, 77, 5);
+}
+
+nav li {
+    list-style-type: none;
+    display: inline-block;
+    background-color: rgb(0, 77, 5);
+    padding: 16px;
+    color: white;
+    align-items: center;
+    font-size: 19px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+#tnd {
+    border: 2px solid rgb(12, 197, 12);
+}
+
+.active {
+    background-color: #00fbff;
+}
+
+header {
+    color: rgb(24, 3, 255);
+}
+
+.bloque1 {
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.caja1 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja2 {
+    background-color: rgb(0, 0, 0);
+    color: rgb(158, 12, 158);
+    padding: 20px;
+}
+
+.caja2:hover {
+    border: 3px solid rgb(85, 3, 85);
+}
+
+.foto1 {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.foto2 {
+    width: 50%;
+    border: 1px solid black;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    margin: auto;
+}
+
+.filas {
+    display: flex;
+    flex-direction: row;
+}
+
+.productos {
+    width: 330px;
+    height: 400px;
+    background-color: rgba(0, 77, 5, 0.654);
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(4, 70, 1, 0.2);
+    margin: 80px;
+    overflow: hidden;
+    transition: all 0.30s;
+}
+
+.productos:hover {
+    /*hover es un pseudo elemento que nos sirve para que al pasar el mouse por encima del elemento seleccionado agregue un efecto de sombra*/
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(4, 70, 1, 0.2);
+}
+
+.productos img {
+    width: 330px;
+    height: 220px;
+}
+
+button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 40px;
+}
+
+.descripcion {
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.precio {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    width: 50px;
+    padding: 10px;
+}
+
+button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 40px;
+}
+
+h4 {
+    color: white;
+}
+
+.redes {
+    width: 40px;
+    height: 40px;
+}
+
+.patrocinadores {
+    width: 150px;
+    height: 150px;
+}
+
+#foto3 {
+    margin-top: 10px;
+    height: 210px;
+    width: 90px;
+}
+
+.patro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ptr {
+    text-align: center;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+
+}
+
+#cosas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#cosas img{
+    height: 50px;
+    width: 50px;
+  }
+footer {
+    background-image: url(https://p4.wallpaperbetter.com/wallpaper/191/774/454/lawn-grass-green-thick-wallpaper-preview.jpg);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 380px;
+}
+
+.mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+address {
+    width: 380px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+@media screen and (max-width:843px) {
+
+    /*El @media lo ponemos para ajustar todo el contenido al tipo de pantalla que se presente*/
+    body {
+        flex-wrap: wrap;
+        width: 100vw;
+    }
+
+    div[class~="flex-container"] {
+        flex-wrap: wrap;
+        width: 100vw;
+        height: auto;
+        margin: auto;
+    }
+
+    div[class~="productos"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100vw;
+        margin: auto;
+    }
+
+    div[class~="filas"] {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100vw;
+        margin: auto;
+    }
+}
