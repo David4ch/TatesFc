@@ -25,7 +25,7 @@ $producto= Database::getProductoId($id);
 <img src="../../Imagenes/emblema.png" id="imagen">
 <form action="updateProducto.php" method="POST">
 <input type="hidden" name="id" value="<?php echo $producto['id'] ?>">
-<input type="text" name="nombre" value="<?php echo $producto['nombre'] ?>" placeholder="Actualiza una nombre">
+<input type="text" name="nombre" value="<?php echo $producto['nombre'] ?>" placeholder="Actualiza un nombre">
 <input type="text" name="precio" value="<?php echo $producto['precio'] ?>" placeholder="Actualiza un precio">
 <input type="text" name="stock" value="<?php echo $producto['stock'] ?>" placeholder="Actualiza un stock">
  <button type = "submit">Enviar</button>

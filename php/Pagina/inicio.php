@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -28,9 +31,9 @@
         <a href="pruebasacceso.php">
             <li><i class="fa-brands fa-wpforms"></i><br>Pruebas de acceso</li>
         </a>
-        <a href="login.php" id="log">
-            <li><i class="fa-solid fa-right-to-bracket"></i><br>Inicia Sesión</li>
-        </a>
+        <div class="log">
+            <p id="log text"><?php echo "¡ Hola " . $_SESSION['user']['nombre'] . " !" ?><i class="fas fa-caret-down"></p>
+        </div>
     </nav>
 
     <header>
@@ -278,21 +281,19 @@
     </div>
 
     <div id="cosas">
-        
-            <a href="https://www.instagram.com/tates.fc/?hl=es">
-                <img class="redes"
-                        src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png"
-                        alt="Instagram">
-            </a>
-            <a href="https://twitter.com/fctates">
-                <img class="redes"
-                        src="https://static.vecteezy.com/system/resources/previews/018/930/745/non_2x/twitter-logo-twitter-icon-transparent-free-free-png.png"
-                        alt="Twitter">
-            </a>
-            <a href="Youtube.com">
-                <img class="redes" src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png"
-                        alt="Youtube">
-            </a>
+
+        <a href="https://www.instagram.com/tates.fc/?hl=es">
+            <img class="redes" src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/fctates">
+            <img class="redes"
+                src="https://static.vecteezy.com/system/resources/previews/018/930/745/non_2x/twitter-logo-twitter-icon-transparent-free-free-png.png"
+                alt="Twitter">
+        </a>
+        <a href="Youtube.com">
+            <img class="redes" src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png"
+                alt="Youtube">
+        </a>
     </div>
 </body>
 <footer>
@@ -330,5 +331,5 @@
         }
     }
 </script>
-<script src="../../js/cambiarModo.js"></script>
+
 </html>

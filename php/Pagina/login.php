@@ -32,24 +32,24 @@
                 <p>INICIAR SESIÓN</p>
             </div>
 
-            <form>
+            <form action="comprobar.php" method="post">
                 <div class="email">
-                    <input type="text" name="email" id="username" placeholder="Email" onblur="validar()">
-
+                    <input type="text" name="user" id="username" placeholder="Email" onblur="validar()">
+                    <span class="text1"></span>
                 </div>
-                <span class="text1"></span>
+                
                 <div class="contraseña">
-                    <input type="password" name="contra" id="contraseña" placeholder="Contraseña" onblur="validar2()">
+                    <input type="password" name="pass" id="contra" placeholder="Contraseña" onblur="validar2()">
                     <p id="pide">Debe contener al menos: Una mayuscula, una minúscula, dos numeros seguidos,
                         algún caracter raro("- _ . +")
                     </p>
+                    <span class="text2"></span>
                 </div>
+                    <button type="submit" id="boton">LOGIN</button>
             </form>
-            <span class="text2"></span>
             <div class="check">
                 <a href="" id="link">¿Has olvidado la contraseña?</a>
             </div>
-            <a id="boton" onmouseover="validarTotal()">LOGIN</a>
     </main>
 </body>
 <script src="../../js/login.js"></script>

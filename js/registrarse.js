@@ -10,10 +10,10 @@ function accion1() {
     p1.textContent = "¡Ya eres socio de TATES FC!";
     p1.classList.add("titulo");
     p2 = document.createElement("p");
-    p2.textContent = "Para volver al inicio haz click";
+    p2.textContent = "Ahora inicia sesión";
     p2.style.fontSize = "20px";
     a = document.createElement("a");
-    a.setAttribute("href", "../php/Pagina/inicio.php");
+    a.setAttribute("href", "../php/Pagina/login.php");
     a.textContent = "aquí";
     a.style.fontSize = "20px";
     p2.style.color = " rgb(4, 35, 61)";

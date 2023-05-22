@@ -1,10 +1,10 @@
 <?php
 
-$datos = [$_POST['nombre'],$_POST['precio'], $_POST['stock']];
+$datos = [$_POST['id'], $_POST['cantidad']];
 
 require_once ('../Database/Database.php');
 
-Database::saveProductos($datos);
+Database::updatePedido($datos);
 
 header('Location: ../Pagina/admin.php');
 

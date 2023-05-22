@@ -1,5 +1,6 @@
 CREATE DATABASE pfc;
 use pfc;
+select * from usuarios;
 CREATE TABLE IF NOT EXISTS Usuarios(
 	id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(20),
@@ -8,6 +9,7 @@ CREATE TABLE IF NOT EXISTS Usuarios(
     direccion VARCHAR(20),
     edad INT,
     correo_electronico VARCHAR(90),
+    contraseña varchar(20) NOT NULL,
     id_rol INTEGER
 )ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS Productos(
@@ -21,9 +23,9 @@ CREATE TABLE IF NOT EXISTS Usuario_has_productos(
     id_producto INT,
     id_usuario INT,
     cantidad INT,
-    fecha_pedido DATE
+    fecha_envio DATE,
+    fecha_entrega DATE
 )ENGINE = InnoDB;
-
 CREATE TABLE IF NOT EXISTS Jugadores(
 	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nombre VARCHAR(20),
@@ -38,37 +40,35 @@ CREATE TABLE IF NOT EXISTS Rol(
 )ENGINE = InnoDB;
 
 
-LOAD DATA INFILE 'C:\\xampp\\htdocs\\ProyectoFinal\\csv\\Usuarios.csv'
+LOAD DATA INFILE 'C:\\xampp\\htdocs\\php\\ProyectoFinal\\csv\\Usuarios.csv'
     INTO TABLE Usuarios
     FIELDS TERMINATED BY ','
     LINES TERMINATED BY '\n'
     IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:\\xampp\\htdocs\\ProyectoFinal\\csv\\Productos.csv'
+LOAD DATA INFILE 'C:\\xampp\\htdocs\\php\\ProyectoFinal\\csv\\Productos.csv'
     INTO TABLE Productos
     FIELDS TERMINATED BY ','
     LINES TERMINATED BY '\n'
     IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:\\xampp\\htdocs\\ProyectoFinal\\csv\\Usuarios_has_productos.csv'
+LOAD DATA INFILE 'C:\\xampp\\htdocs\\php\\ProyectoFinal\\csv\\Usuarios_has_productos.csv'
     INTO TABLE Usuario_has_productos
     FIELDS TERMINATED BY ','
     LINES TERMINATED BY '\n'
     IGNORE 1 ROWS;
     
-LOAD DATA INFILE 'C:\\xampp\\htdocs\\ProyectoFinal\\csv\\Jugadores.csv'
+LOAD DATA INFILE 'C:\\xampp\\htdocs\\php\\ProyectoFinal\\csv\\Jugadores.csv'
     INTO TABLE Jugadores
     FIELDS TERMINATED BY ','
     LINES TERMINATED BY '.'
     IGNORE 0 ROWS;
     
-LOAD DATA INFILE 'C:\\xampp\\htdocs\\ProyectoFinal\\csv\\Rol.csv'
+LOAD DATA INFILE 'C:\\xampp\\htdocs\\php\\ProyectoFinal\\csv\\Rol.csv'
     INTO TABLE Rol
     FIELDS TERMINATED BY ','
     LINES TERMINATED BY '\n'
     IGNORE 1 ROWS;
-    
-    SELECT * FROM  Jugadores;
 
 
 

@@ -30,6 +30,29 @@ class Database
 
         return $resultado1;
     }
+    public static function getUsuarioId($id) {
+        $sql = "SELECT * FROM usuarios WHERE id = $id";
+        $resultado = self::conectar()->query($sql);
+
+        return $resultado->fetch(PDO::FETCH_ASSOC);
+    }
+    //Funcion que inserta valores en la tabla
+    //$Datos recibe los elementos de los ordenadores
+    public static function saveUsuario($datos){
+        $sql = "INSERT INTO usuarios (nombre, apellido, numero, direccion, edad, correo_electronico, id_rol) VALUES ('$datos[0]', '$datos[1]', $datos[2],'$datos[3]', $datos[4], '$datos[5]', $datos[6])";
+        self::conectar()->exec($sql);
+
+    }
+    public static function updateUsuario($datos) {
+        $sql = "UPDATE usuarios SET nombre = '$datos[1]' , apellido = '$datos[2]', numero= $datos[3], direccion='$datos[4]', edad=$datos[5], correo_electronico = '$datos[6]', id_rol= $datos[7] WHERE id = $datos[0]";
+        self::conectar()->exec($sql);
+
+    }
+    public static function deleteUsuario($id) {
+        $sql = "DELETE  FROM usuarios WHERE id = $id";
+        self::conectar()->exec($sql);
+
+    }
     //-------------------------------SECCION PRODUCTOS---------------------------------------------------------------------
     public static function getAllProductos(){
         $sql = "SELECT * FROM Productos";
@@ -63,58 +86,83 @@ class Database
     }
 
     //-------------------------------SECCION USUARIOS_PRODUCTOS---------------------------------------------------------------------
-    public static function getAllUsuariosProductos()
-    {
+    public static function getAllUsuariosProductos(){
         $sql = "SELECT * FROM usuario_has_productos";
         $resultado = self::conectar()->query($sql);
 
         return $resultado;
     }
+    public static function getPedidoId($id) {
+        $sql = "SELECT * FROM usuario_has_productos WHERE id = $id";
+        $resultado = self::conectar()->query($sql);
+
+        return $resultado->fetch(PDO::FETCH_ASSOC);
+    }
+    public static function savePedido($datos){
+        $sql = "INSERT INTO usuario_has_productos (id_producto, id_usuario, cantidad, fecha_envio, fecha_entrega) VALUES ($datos[0], $datos[1], $datos[2], '$datos[3]', '$datos[4]')";
+        self::conectar()->exec($sql);
+
+    }
+    public static function updatePedido($datos) {
+        $sql = "UPDATE usuario_has_productos SET cantidad = $datos[1] WHERE id = $datos[0]";
+        self::conectar()->exec($sql);
+
+    }
+    public static function deletePedido($id) {
+        $sql = "DELETE  FROM usuario_has_productos WHERE id = $id";
+        self::conectar()->exec($sql);
+
+    }
     //-------------------------------SECCION ROL---------------------------------------------------------------------
-    public static function getAllRol()
-    {
+    public static function getAllRol(){
         $sql = "SELECT * FROM Rol";
         $resultado = self::conectar()->query($sql);
 
         return $resultado;
     }
     //-------------------------------SECCION JUGADORES---------------------------------------------------------------------
-    public static function getAllJugadores()
-    {
+    public static function getAllJugadores() {
         $sql = "SELECT * FROM Jugadores";
         $resultado1 = self::conectar()->query($sql);
 
         return $resultado1;
     }
 
-    public static function getJugadorId($id)
-    {
+    public static function getJugadorId($id){
         $sql = "SELECT * FROM jugadores WHERE id = $id";
         $resultado = self::conectar()->query($sql);
 
         return $resultado->fetch(PDO::FETCH_ASSOC);
     }
-
-    //Funcion que inserta valores en la tabla
-    //$Datos recibe los elementos de los ordenadores
-    public static function saveJugador($datos)
-    {
+    public static function saveJugador($datos){
         $sql = "INSERT INTO jugadores (nombre, apellido, dorsal, posicion) VALUES ('$datos[0]', '$datos[1]', $datos[2], '$datos[3]')";
         self::conectar()->exec($sql);
 
     }
 
-    public static function updateJugador($datos)
-    {
-        $sql = "UPDATE jugadores SET nombre = '$datos[1]' , apellido = '$datos[2]', dorsal = $datos[3] , posicion = '$datos[3]' WHERE id = $datos[0]";
+    public static function updateJugador($datos){
+        $sql = "UPDATE jugadores SET nombre = '$datos[1]' , apellido = '$datos[2]', dorsal = $datos[3] , posicion = '$datos[4]' WHERE id = $datos[0]";
         self::conectar()->exec($sql);
 
     }
-    public static function deleteJugador($id)
-    {
+    public static function deleteJugador($id){
         $sql = "DELETE  FROM jugadores WHERE id = $id";
         self::conectar()->exec($sql);
 
+    }
+
+    /**--------------------------------SECCION LOGIN------------------------------ */
+    public static function login($email, $password){
+
+        $sql = "SELECT * FROM usuarios WHERE correo_electronico='$email' AND contraseña='$password'";
+        $user = self::conectar()->query($sql);
+
+        if($user != null){
+            return $user->fetch(PDO::FETCH_ASSOC);
+        }else{
+            return null;
+        }
+        
     }
 }
 
