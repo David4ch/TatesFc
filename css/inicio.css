@@ -82,9 +82,8 @@ label {
 }
 
 nav {
-    position: relative;
-    justify-content: center;
     display: flex;
+    justify-content: center;
     background-color: rgb(0, 0, 0);
     height: 78px;
 }
@@ -94,11 +93,26 @@ nav a {
     border: 2px solid rgb(0, 77, 5);
 }
 
+
 li {
     list-style-type: none;
     display: inline-block;
     background-color: rgb(0, 77, 5);
-    padding: 16px;
+    padding: 16px; 
+    color: white;
+    align-items: center;
+    font-size: 19px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+
+#loginli{
+    margin-top: 10px;
+    list-style-type: none;
+    display: inline-block;
+    background-color: rgb(0, 77, 5);
+    padding: 5px;
     color: white;
     align-items: center;
     font-size: 19px;
@@ -110,22 +124,16 @@ li {
 }
 
 .log {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-    width: 80px;
-    
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    right: 0;
     background-color: rgb(0, 77, 5);
-    padding: 16px;
-    height: 40px;
+    text-align: center;
+    justify-content: center;
 }
-
-.log:hover {
-    border: 2px solid rgb(12, 197, 12);
-}
-#logtext{
-    font-size: 10px;
+.log:hover{
+     border: 2px solid rgb(12, 197, 12);
 }
 .active {
     background-color: #ffffff;
@@ -288,11 +296,12 @@ tbody tr:hover {
 }
 
 footer {
-    background-image: url("https://p4.wallpaperbetter.com/wallpaper/191/774/454/lawn-grass-green-thick-wallpaper-preview.jpg");
+    background-image: url(https://st4.depositphotos.com/1500568/40371/i/600/depositphotos_403717764-stock-photo-3d-square-blocks-pattern-high.jpg);
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     gap: 380px;
+
 }
 
 .mapa {

@@ -14,7 +14,7 @@ main {
     border-top: 7px solid rgb(4, 35, 61);
     padding: 15px;
     width: 560px;
-    height: 650px;
+    height: 700px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@ form {
 }
 #equis,
 #equis2,
-#equis3,#equis4 {
+#equis3,#equis4,#equis5,#equis6 {
     position: absolute;
     visibility: hidden;
     margin-top: 10px;
