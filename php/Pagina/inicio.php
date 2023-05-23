@@ -31,17 +31,15 @@ session_start();
         <a href="pruebasacceso.php">
             <li><i class="fa-brands fa-wpforms"></i><br>Pruebas de acceso</li>
         </a>
-        <div class="log">
-            <p id="log text"><?php echo "¡ Hola " . $_SESSION['user']['nombre'] . " !" ?><i class="fas fa-caret-down"></p>
-        </div>
+        <a   href="" class="log">
+            <li id="loginli"><i class="fa-solid fa-user"></i><br><?php echo "¡ Hola " . $_SESSION['user']['nombre'] . " !" ?></li>
+        </a>
     </nav>
 
     <header>
         <div class="imgContainer">
             <img class="foto1" src="https://madridfutbol7.es/wp-content/uploads/2022/08/Tates-FC-Madridfutbol7.jpg"
                 alt="TATES FC">
-            <div class=inic>
-                <p>INICIO</p>
             </div>
         </div>
         <div class="bloque1">
@@ -279,43 +277,44 @@ session_start();
             </tbody>
         </table>
     </div>
-
     <div id="cosas">
-
+        
         <a href="https://www.instagram.com/tates.fc/?hl=es">
-            <img class="redes" src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png" alt="Instagram">
+            <img class="redes"
+                    src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png"
+                    alt="Instagram">
         </a>
         <a href="https://twitter.com/fctates">
             <img class="redes"
-                src="https://static.vecteezy.com/system/resources/previews/018/930/745/non_2x/twitter-logo-twitter-icon-transparent-free-free-png.png"
-                alt="Twitter">
+                    src="https://cdn-icons-png.flaticon.com/512/4096/4096132.png"
+                    alt="Twitter">
         </a>
         <a href="Youtube.com">
             <img class="redes" src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png"
-                alt="Youtube">
+                    alt="Youtube">
         </a>
-    </div>
+</div>
 </body>
 <footer>
-    <div>
-        <p id="ptr">PATROCINADORES</p>
-        <div class="patro">
-            <img class="patrocinadores" src="http://assets.stickpng.com/thumbs/5a1c2c12f65d84088faf13b7.png"
-                alt="Mercadona">
-            <img class="patrocinadores"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/2024px-Burger_King_logo_%281999%29.svg.png"
-                alt="Burger King">
-            <img id="foto3" class="patrocinadores" src="../../Imagenes/aguardiente.png" alt="Aguardiente Antioqueño">
-        </div>
+<div>
+    <p id="ptr">PATROCINADORES</p>
+    <div class="patro">
+        <img class="patrocinadores" src="https://mercadona.es/web-display-img.png"
+            alt="Mercadona">
+        <img class="patrocinadores"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/2024px-Burger_King_logo_%281999%29.svg.png"
+            alt="Burger King">
+        <img id="foto3" class="patrocinadores" src="../../Imagenes/aguardiente.png" alt="Aguardiente Antioqueño">
+    </div>
 
-    </div>
-    <div class="mapa">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.2809767285867!2d-3.6801488842823917!3d40.46904856037911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228eb37e45ebd%3A0x9bfa83f7479125e0!2sColegio%20Nuestra%20Se%C3%B1ora%20del%20Recuerdo!5e0!3m2!1ses!2ses!4v1680277686820!5m2!1ses!2ses"
-            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <address><i class="fa-solid fa-location-dot"></i> Estamos en el campo de futbol El Recuerdo</address>
-    </div>
+</div>
+<div class="mapa">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.2809767285867!2d-3.6801488842823917!3d40.46904856037911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228eb37e45ebd%3A0x9bfa83f7479125e0!2sColegio%20Nuestra%20Se%C3%B1ora%20del%20Recuerdo!5e0!3m2!1ses!2ses!4v1680277686820!5m2!1ses!2ses"
+        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <address><i class="fa-solid fa-location-dot"></i> Estamos en el campo de futbol El Recuerdo</address>
+</div>
 </footer>
 
 

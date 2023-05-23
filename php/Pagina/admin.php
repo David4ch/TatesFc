@@ -7,7 +7,15 @@ $resultado3 = Database::getAllRol();
 $resultado4 = Database::getAllJugadores();
 
 session_start();
-
+if(isset($_SESSION['user'])){
+    if($_SESSION['user']['id_rol'] ==2){
+      header('Location: inicio.php');
+    }else{
+      //Todo correcto
+    }
+  }else{
+    header('Location: login.php');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

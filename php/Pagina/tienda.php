@@ -34,7 +34,7 @@
         </a>
     </nav>
     <header>
-        <img class="foto1" src="https://madridfutbol7.es/wp-content/uploads/2022/08/Tates-FC-Madridfutbol7.jpg"
+        <img class="foto1" src="../../Imagenes/trofeos2.jpg"
             alt="TATES FC">
         <div class="bloque1">
             <div class="caja1">
@@ -48,12 +48,11 @@
         </div>
     </header>
     <div class="flex-container">
-
         <div class="filas">
             <?php 
               $resultado = Database::getAllProductos();
             echo "<div class='productos'>";
-            echo "<img src='../../carpeta img/camisetalocal.png' alt='camisetalocal'>";
+            echo "<img src='../../Imagenes/camisetalocal.png' alt='camisetalocal'>";
             echo "<h4><strong>";
             foreach( $resultado as $row){
                if($row["nombre"] == "Camiseta local"){
@@ -77,7 +76,7 @@
             <?php 
              $resultado = Database::getAllProductos();
             echo "<div class='productos'>";
-            echo "<img src='../../carpeta img/camisetavisitante.png' alt='camisetavisitante'>";
+            echo "<img src='../../Imagenes/camisetavisitante.png' alt='camisetavisitante'>";
             echo "<h4><strong>";
             foreach( $resultado as $row){
                if($row["nombre"] === "Camiseta visitante"){
@@ -104,7 +103,7 @@
             $resultado = Database::getAllProductos();
             echo "<div class='filas'>";
             echo "<div class='productos'>";
-            echo "<img src='../../carpeta img/camisetaportero.png' alt='camisetaportero'>";
+            echo "<img src='../../Imagenes/camisetaportero.png' alt='camisetaportero'>";
             echo "<h4><strong>";
             foreach( $resultado as $row){
                if($row["nombre"] == "Camiseta portero"){
@@ -132,7 +131,7 @@
             $resultado = Database::getAllProductos();
 
             echo "<div class='productos'>";
-            echo "<img src='../../carpeta img/guantesjose.png' alt='guantes'>";
+            echo "<img src='../../Imagenes/guantesjose.png' alt='guantes'>";
             echo "<h4><strong>";
             foreach( $resultado as $row){
                if($row["nombre"] == "Guantes firmados"){
@@ -166,7 +165,7 @@
             </a>
             <a href="https://twitter.com/fctates">
                 <img class="redes"
-                        src="https://static.vecteezy.com/system/resources/previews/018/930/745/non_2x/twitter-logo-twitter-icon-transparent-free-free-png.png"
+                        src="https://cdn-icons-png.flaticon.com/512/4096/4096132.png"
                         alt="Twitter">
             </a>
             <a href="Youtube.com">
@@ -179,7 +178,7 @@
     <div>
        <p id="ptr">PATROCINADORES</p> 
         <div class="patro">
-            <img class="patrocinadores" src="http://assets.stickpng.com/thumbs/5a1c2c12f65d84088faf13b7.png"
+            <img class="patrocinadores" src="https://mercadona.es/web-display-img.png"
                 alt="Mercadona">
             <img class="patrocinadores"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/2024px-Burger_King_logo_%281999%29.svg.png"

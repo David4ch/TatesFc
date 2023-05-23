@@ -17,6 +17,7 @@
             <input type="text" name="direccion" placeholder = "Inserta un direccion">
             <input type="text" name="edad" placeholder = "Inserta un edad">
             <input type="text" name="correo_electronico" placeholder = "Inserta un correo electronico">
+            <input type="text" name="contraseña" placeholder = "Inserta una contraseña">
             <input type="text" name="id_rol" placeholder = "Inserta un rol">
             <button type=submit>ENVIAR</button>
         </form>

@@ -39,9 +39,13 @@ class Database
     //Funcion que inserta valores en la tabla
     //$Datos recibe los elementos de los ordenadores
     public static function saveUsuario($datos){
-        $sql = "INSERT INTO usuarios (nombre, apellido, numero, direccion, edad, correo_electronico, id_rol) VALUES ('$datos[0]', '$datos[1]', $datos[2],'$datos[3]', $datos[4], '$datos[5]', $datos[6])";
+        $sql = "INSERT INTO usuarios (nombre, apellido, numero, direccion, edad, correo_electronico, contraseña ,id_rol) VALUES ('$datos[0]', '$datos[1]', $datos[2],'$datos[3]', $datos[4], '$datos[5]', $datos[6], $datos[7])";
         self::conectar()->exec($sql);
 
+    }
+    public static function saveUsuario2($datos1){
+        $sql = "INSERT INTO usuarios (nombre, apellido, numero, direccion, edad, correo_electronico, contraseña, id_rol) VALUES ('$datos1[0]', '$datos1[1]', $datos1[2],'$datos1[3]', $datos1[4], '$datos1[5]', '$datos1[6]', 2)";
+        self::conectar()->exec($sql);
     }
     public static function updateUsuario($datos) {
         $sql = "UPDATE usuarios SET nombre = '$datos[1]' , apellido = '$datos[2]', numero= $datos[3], direccion='$datos[4]', edad=$datos[5], correo_electronico = '$datos[6]', id_rol= $datos[7] WHERE id = $datos[0]";

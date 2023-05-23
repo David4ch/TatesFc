@@ -16,25 +16,40 @@
     <img src="../../Imagenes/emblema.png" id="imagen">
     <main>
         <p class="titulo">REGISTRO</p>
-        <form>
+        <form action = "../Usuarios/saveUsuario2.php" method= "POST">
             <div class="persona">
                 <div class="nombre">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Nombre" id="inputnombre">
+                    <input type="text"  name="nombre" placeholder="Nombre" id="inputnombre">
                 </div>
                 <div class="apellido">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Apellidos" id="inputapellido">
+                    <input type="text"  name="apellido" placeholder="Apellidos" id="inputapellido">
                 </div>
+            </div>
+            <div class="numero">
+                <i class="fa-sharp fa-solid fa-phone"></i>
+                <input type="text" placeholder="Número: XXX XXX XXX" name="numero" id="numeros" onblur="validarnum()">
+                <img src="../../Imagenes/equis.png" id="equis5">
+            </div>
+            <div class="direccion">
+            <i class="fa-sharp fa-solid fa-location-dot"></i>
+                <input type="text" name="direccion" placeholder="Dirección" id="inputdireccion">
+                <img src="../../Imagenes/equis.png" id="equis4">
+            </div>
+            <div class="fecha">
+                <i class="fa-solid fa-calendar-days"></i>
+                <input type="text" name="edad" id="fecha" placeholder="Escribe tu edad (+18 años)" onblur="validarEdad()">
+                <img src="../../Imagenes/equis.png" id="equis6">
             </div>
             <div class="email">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="text" placeholder="Email" name="user" id="inputemail" onblur="validarEmail()">
+                <input type="text" placeholder="Email" name="correo_electronico" id="inputemail" onblur="validarEmail()">
                 <img src="../../Imagenes/equis.png" id="equis">
             </div>
             <div class="password">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" name="pass" placeholder="Contraseña" id="inputpassword" onblur="validarContra1()">
+                <input type="password" name="contraseña" placeholder="Contraseña" id="inputpassword" onblur="validarContra1()">
                 <img src="../../Imagenes/equis.png" id="equis2">
                 <p id="pide">Debe contener al menos: Una mayuscula, una minúscula, dos numeros seguidos,
                     algún caracter raro("- _ . +")
@@ -46,23 +61,14 @@
                 <img src="../../Imagenes/equis.png" id="equis3">
                 <span id="mal">Las contraseñas<br> no coinciden</span>
             </div>
-
-            <div class="numero">
-                <i class="fa-sharp fa-solid fa-phone"></i>
-                <input type="text" placeholder="Número: XXX XXX XXX" name="num" id="numeros" onblur="validarnum()">
-                <img src="../../Imagenes/equis.png" id="equis4">
-            </div>
-            <div class="fecha">
-                <i class="fa-solid fa-calendar-days"></i>
-                <input type="date" id="fecha">
-            </div>
             <div class="check">
                 <input type="checkbox">
                 <p>Estoy de acuerdo con <a href="https://policies.google.com/?hl=es" id="link2"><strong>Privacidad y
                             términos</strong></a></p>
             </div>
+            <button id="boton" onmouseover="verifica()">REGISTRARSE</button>
         </form>
-        <p id="boton" onmouseover="verifica()">REGISTRARSE</p>
+        
     </main>
 </body>
 <script src="../../js/registrarse.js"></script>
