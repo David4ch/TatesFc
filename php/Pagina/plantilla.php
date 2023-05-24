@@ -20,12 +20,7 @@ $resultado = Database::getAllJugadores();
 </head>
 
 <body>
-<div class="botoncontainer">
-        
-    </div>
     <nav>
-    
-
         <a href="inicio.php">
             <li><i class="fa-solid fa-house"></i><br>Inicio</li>
         </a>
@@ -48,162 +43,293 @@ $resultado = Database::getAllJugadores();
             </div>
         </div>
     </header>
+
+    <div class="buscador">
+        <div class="search">
+            <input type="text" id="search-input" class="busca" placeholder="Filtra por nombre o por posicion">
+            <button type="submit" class="btnBuscar">
+                 <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+
     <div class="container">
-        <?php 
-              $resultado = Database::getAllJugadores();
-            echo "<div class='card'>";
-            echo "<div class='border'>";
-            foreach( $resultado as $row){
-               if($row["nombre"] == "Alberto"){
-                echo  "<h4>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Alberto"){
+                    echo  "<h4>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "portero"){
+                    echo "<h3>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 13){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
                 }
-               if($row["posicion"] == "portero"){
-                echo "<h3>" . $row["posicion"] . "</h3>"; 
-               } 
-               if($row["dorsal"] == 13){
-                echo "<h5>" . $row["dorsal"] . "</h5>"; 
-               } 
-            }
-            echo "<ul>";
-            echo "<li><i class='fab fa-twitter'></i></li>";
-            echo "<li><i class='fab fa-facebook'></i></li>";
-            echo "<li><i class='fab fa-instagram'></i></li>";
-            echo "</ul>";
-            echo "</div>";
-            echo "</div>";
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?> 
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Jose"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "portero"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 21){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
             ?>    
-        <div class="card">
-            <div class="border">
-                <h4>José Vera</h4>
-                <h3>Portero</h3>
-                <h5>21</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="border">
-                <h4>Adrián González</h4>
-                <h3>Defensa</h3>
-                <h5>15</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="border">
-                <h4>Diego López</h4>
-                <h3>Defensa</h3>
-                <h5>4</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="border">
-                <h4>Andrés Pino</h4>
-                <h3>Defensa</h3>
-                <h5>12</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="border">
-                <h4>Iván Alonso</h4>
-                <h3>Defensa</h3>
-                <h5>18</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="border">
-                <h4>Alexis Quisilema</h4>
-                <h3>Mediocentro</h3>
-                <h5>7</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="border">
-                <h4>Sergio Villafaina</h4>
-                <h3>Mediocentro</h3>
-                <h5>8</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="border">
-                <h4>Hugo Dongil</h4>
-                <h3>Mediocentro</h3>
-                <h5>6</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="border">
-                <h4>Gabriel Ramírez</h4>
-                <h3>Mediocentro</h3>
-                <h5>11</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="border">
-                <h4>Álvaro Cascón</h4>
-                <h3>Delantero</h3>
-                <h5>97</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="border">
-                <h4>Jesús Ramírez</h4>
-                <h3>Delantero</h3>
-                <h5>10</h5>
-                <ul>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div>
-        </div>
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Adrian"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "defensa"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 15){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?> 
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Diego"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "defensa"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 4){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?> 
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Andres"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "defensa"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 12){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?> 
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Ivan"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "defensa"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 18){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?> 
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Alexis"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "mediocentro"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 7){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?>
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Sergio"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "mediocentro"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 8){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?> 
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Hugo"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "mediocentro"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 6){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?> 
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Gabriel"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "mediocentro"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 11){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?> 
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Alvaro"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "delantero"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 97){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?> 
+            <?php 
+                $resultado = Database::getAllJugadores();
+                echo "<div class='card'>";
+                echo "<div class='border'>";
+                foreach( $resultado as $row){
+                    if($row["nombre"] == "Jesus"){
+                    echo  "<h4 class='player-name'>" . $row["nombre"] . " " . $row["apellido"] . "</h4>";
+                    }
+                    if($row["posicion"] == "delantero"){
+                    echo "<h3 class='team-name'>" . $row["posicion"] . "</h3>"; 
+                    } 
+                    if($row["dorsal"] == 10){
+                    echo "<h5>" . $row["dorsal"] . "</h5>"; 
+                    } 
+                }
+                echo "<ul>";
+                echo "<li><i class='fab fa-twitter'></i></li>";
+                echo "<li><i class='fab fa-facebook'></i></li>";
+                echo "<li><i class='fab fa-instagram'></i></li>";
+                echo "</ul>";
+                echo "</div>";
+                echo "</div>";
+            ?> 
     </div>
     <div id="cosas">
 
@@ -213,7 +339,7 @@ $resultado = Database::getAllJugadores();
         <a href="https://twitter.com/fctates">
             <img class="redes" src="https://cdn-icons-png.flaticon.com/512/4096/4096132.png" alt="Twitter">
         </a>
-        <a href="Youtube.com">
+        <a href="https://www.youtube.com/@madridfutbol7574">
             <img class="redes" src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="Youtube">
         </a>
     </div>
@@ -235,6 +361,6 @@ $resultado = Database::getAllJugadores();
 </footer>
 
 </body>
-
+<script src="../../js/plantilla.js"></script>
 </html>
     

@@ -1,9 +1,7 @@
 <?php
-    require_once("../Database/Database.php");
-    $resultado = Database::getAllProductos();
+require_once("../Database/Database.php");
+$resultado = Database::getAllProductos();
 ?>
-<!DOCTYPE html>
-<html>
 
 <head>
     <meta charset="UTF-8">
@@ -34,158 +32,147 @@
         </a>
     </nav>
     <header>
-        <img class="foto1" src="../../Imagenes/trofeos2.jpg"
-            alt="TATES FC">
+        <img class="foto1" src="../../Imagenes/trofeos2.jpg" alt="TATES FC">
         <div class="bloque1">
             <div class="caja1">
                 <h1>TIENDA OFICIAL DE TATES FUTBOL CLUB</h1>
             </div>
-          
-                <a href="carrito.php" class="caja2">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-            
+
+            <a href="carrito.php" class="caja2">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+
         </div>
     </header>
-    <div class="flex-container">
-        <div class="filas">
-            <?php 
-              $resultado = Database::getAllProductos();
-            echo "<div class='productos'>";
-            echo "<img src='../../Imagenes/camisetalocal.png' alt='camisetalocal'>";
-            echo "<h4><strong>";
-            foreach( $resultado as $row){
-               if($row["nombre"] == "Camiseta local"){
-                echo  $row["nombre"] . " TATES 22/23";
-            }
-            }
-            echo "</strong></h4>";
-            ?>
-             <?php 
-             $resultado = Database::getAllProductos();
-            echo "<h4><strong>";
-            foreach( $resultado as $row){
-                if($row["nombre"] == "Camiseta local"){
-                    echo  $row["precio"] . " €";
+    <div class="container">
+        <div class="cards">
+            <?php
+            $resultado = Database::getAllProductos();
+            echo " <div class='card card-1'>";
+            echo "<div class='text'>";
+            foreach ($resultado as $row) {
+                if ($row["nombre"] == "Camiseta local") {
+                    echo " <h1>" . $row["nombre"] . " </h1>";
+                    echo "<p>¡Camiseta Oficial Local de los Tates FC, la cual ha sido utilizada por todos nuestros jugadores en cada uno de sus partidos!</p>";
+                }
+                if ($row["precio"] == 84) {
+                    echo " <a>" . $row["precio"]  ."€</a>";
                 }
             }
-            echo "</strong></h4>";
-            echo "<button>Añadir al carrito</button>";
-            echo "</div>";
-            ?>
-            <?php 
-             $resultado = Database::getAllProductos();
-            echo "<div class='productos'>";
-            echo "<img src='../../Imagenes/camisetavisitante.png' alt='camisetavisitante'>";
-            echo "<h4><strong>";
-            foreach( $resultado as $row){
-               if($row["nombre"] === "Camiseta visitante"){
-                echo  $row["nombre"] . " TATES 22/23";
-            }
-            }
-            echo "</strong></h4>";
-            ?>
-            <?php 
-            $resultado = Database::getAllProductos();
-            echo "<h4><strong>";
-            foreach( $resultado as $row){
-               if($row["precio"] == 79){
-                echo  $row["precio"] . " €";
-                
-            }
-            }
-            echo "</strong></h4>";
-            echo "<button>Añadir al carrito</button>";
             echo "</div>";
             echo "</div>";
             ?>
-            <?php 
+             <?php
             $resultado = Database::getAllProductos();
-            echo "<div class='filas'>";
-            echo "<div class='productos'>";
-            echo "<img src='../../Imagenes/camisetaportero.png' alt='camisetaportero'>";
-            echo "<h4><strong>";
-            foreach( $resultado as $row){
-               if($row["nombre"] == "Camiseta portero"){
-                echo  $row["nombre"] . " TATES 22/23";
+            echo " <div class='card card-2'>";
+            echo "<div class='text'>";
+            foreach ($resultado as $row) {
+                if ($row["nombre"] == "Camiseta visitante") {
+                    echo " <h1>" . $row["nombre"] . " </h1>";
+                    echo "<p> ¡Camiseta Oficial Visitante de los Tates FC, la cual ha sido utilizada por todos nuestros
+                    jugadores en cada uno de sus partidos!</p>";
+                }
+                if ($row["precio"] == 79) {
+                    echo " <a>" . $row["precio"]  ."€</a>";
+                }
             }
-            }
-            echo "</strong></h4>";
-            ?>
-            <?php 
-            $resultado = Database::getAllProductos();
-
-            echo "<h4><strong>";
-            foreach( $resultado as $row){
-               if($row["precio"] == 64){
-                echo  $row["precio"] . " €";
-                
-            }
-            }
-            echo "</strong></h4>";
-            echo "<button>Añadir al carrito</button>";
             echo "</div>";
-
+            echo "</div>";
             ?>
-            <?php 
+             <?php
             $resultado = Database::getAllProductos();
-
-            echo "<div class='productos'>";
-            echo "<img src='../../Imagenes/guantesjose.png' alt='guantes'>";
-            echo "<h4><strong>";
-            foreach( $resultado as $row){
-               if($row["nombre"] == "Guantes firmados"){
-                echo  $row["nombre"] . " (Final UCL)";
+            echo " <div class='card card-3'>";
+            echo "<div class='text'>";
+            foreach ($resultado as $row) {
+                if ($row["nombre"] == "Camiseta portero") {
+                    echo " <h1>" . $row["nombre"] . " </h1>";
+                    echo "<p> ¡Camiseta Oficial de portero de los Tates FC, la cual ha sido utilizada por todos nuestros
+                    porteros en cada uno de sus partidos!</p>";
+                }
+                if ($row["precio"] == 64) {
+                    echo " <a>" . $row["precio"]  ."€</a>";
+                }
             }
-            }
-            echo "</strong></h4>";
-
+            echo "</div>";
+            echo "</div>";
             ?>
-            <?php 
+              <?php
             $resultado = Database::getAllProductos();
-            echo "<h4><strong>";
-            foreach( $resultado as $row){
-               if($row["precio"] == 1300){
-                echo  $row["precio"] . " €";
-                
+            echo " <div class='card card-4'>";
+            echo "<div class='text'>";
+            foreach ($resultado as $row) {
+                if ($row["nombre"] == "Chaqueta entrenamiento") {
+                    echo " <h1>" . $row["nombre"] . " </h1>";
+                    echo "<p>¡Chaquetilla Oficial de los Tates FC, la cual ha sido utilizada por todos nuestros jugadores en
+                    cada uno de sus partidos!</p>";
+                }
+                if ($row["precio"] == 49) {
+                    echo " <a>" . $row["precio"]  ."€</a>";
+                }
             }
+            echo "</div>";
+            echo "</div>";
+            ?>
+               <?php
+            $resultado = Database::getAllProductos();
+            echo " <div class='card card-5'>";
+            echo "<div class='text'>";
+            foreach ($resultado as $row) {
+                if ($row["nombre"] == "Guantes portero") {
+                    echo " <h1>" . $row["nombre"] . " </h1>";
+                    echo "<p>¡Guantes de portero, los cuales ha sido utilizados por Alberto y José en cada uno de sus
+                    partidos!</p>";
+                }
+                if ($row["precio"] == 24) {
+                    echo " <a>" . $row["precio"]  ."€</a>";
+                }
             }
-            echo "</strong></h4>";
-            echo "<button>Añadir al carrito</button>";
+            echo "</div>";
+            echo "</div>";
+            ?>
+             <?php
+            $resultado = Database::getAllProductos();
+            echo " <div class='card card-6'>";
+            echo "<div class='text'>";
+            foreach ($resultado as $row) {
+                if ($row["nombre"] == "Foto firmada") {
+                    echo " <h1>" . $row["nombre"] . " </h1>";
+                    echo "<p> ¡Foto firmada con dedicatoria especial de parte de toda la familia Tates!</p>";
+                }
+                if ($row["precio"] == 5) {
+                    echo " <a>" . $row["precio"]  ."€</a>";
+                }
+            }
+            echo "</div>";
             echo "</div>";
             echo "</div>";
             echo "</div>";
             ?>
     <div id="cosas">
-        
-            <a href="https://www.instagram.com/tates.fc/?hl=es">
-                <img class="redes"
-                        src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png"
-                        alt="Instagram">
-            </a>
-            <a href="https://twitter.com/fctates">
-                <img class="redes"
-                        src="https://cdn-icons-png.flaticon.com/512/4096/4096132.png"
-                        alt="Twitter">
-            </a>
-            <a href="Youtube.com">
-                <img class="redes" src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png"
-                        alt="Youtube">
-            </a>
+
+        <a href="https://www.instagram.com/tates.fc/?hl=es">
+            <img class="redes" src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/fctates">
+            <img class="redes" src="https://cdn-icons-png.flaticon.com/512/4096/4096132.png" alt="Twitter">
+        </a>
+        <a href="https://www.youtube.com/@madridfutbol7574">
+            <img class="redes" src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png"
+                alt="Youtube">
+        </a>
     </div>
 </body>
 <footer>
     <div>
-       <p id="ptr">PATROCINADORES</p> 
+        <p id="ptr">PATROCINADORES</p>
         <div class="patro">
-            <img class="patrocinadores" src="https://mercadona.es/web-display-img.png"
-                alt="Mercadona">
+            <img class="patrocinadores" src="https://mercadona.es/web-display-img.png" alt="Mercadona">
             <img class="patrocinadores"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/2024px-Burger_King_logo_%281999%29.svg.png"
                 alt="Burger King">
             <img id="foto3" class="patrocinadores" src="../../Imagenes/aguardiente.png" alt="Aguardiente Antioqueño">
         </div>
-        
+
     </div>
     <div class="mapa">
         <iframe

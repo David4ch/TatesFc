@@ -33,7 +33,8 @@ if(isset($_SESSION['user'])){
       <div class="user-profile">
         <a href="#" class="username" id="dropdownMenuLink"><?php echo "¡Hola " . $_SESSION['user']['nombre'] . "!" ?><i class="fas fa-caret-down"></i></a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="logout.php"><i class="fa-solid fa-user"></i>Cerrar sesión</a>
+          <a class="dropdown-item" href="logout.php">Cerrar sesión</a>
+          <a class="dropdown-item" href="inicio.php">Ir a inicio</a>
         </div>
       </div>
     </nav>

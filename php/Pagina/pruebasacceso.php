@@ -76,7 +76,7 @@
         <a href="https://twitter.com/fctates">
             <img class="redes" src="https://cdn-icons-png.flaticon.com/512/4096/4096132.png" alt="Twitter">
         </a>
-        <a href="Youtube.com">
+        <a href="https://www.youtube.com/@madridfutbol7574">
             <img class="redes" src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png" alt="Youtube">
         </a>
     </div>
