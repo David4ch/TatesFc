@@ -56,41 +56,27 @@ function validarnum() {
     let expresion = /^\d{9}$/;
     c1 = document.getElementById("numeros");
     if (expresion.test(valor)) {
-        document.getElementById("equis4").style.visibility = "hidden";
+        document.getElementById("equis5").style.visibility = "hidden";
         c1.style.border = "2px solid green";
     } else {
         c1.style.border = "2px solid red";
         c1.style.animation = "vibrar 0.3s"
-        document.getElementById("equis4").style.visibility = "visible";
+        document.getElementById("equis5").style.visibility = "visible";
     }
 }
 
-
-function validarFecha() {
-    let email = formularios[0]["elements"]["correo_electronico"]["value"];
-    let expresion = /^\S\w{4,}@\S[a-zA-Z0-9.]{4,}\.[a-zA-Z]{2,}$/;
-    c1 = document.getElementById("inputemail");
-
-    if (expresion.test(email)) {
-        document.getElementById("equis").style.visibility = "hidden";
-        c1.style.border = "2px solid green";
-    } else {
-        c1.style.border = "2px solid red";
-        c1.style.animation = "vibrar 0.3s"
-        document.getElementById("equis").style.visibility = "visible";
-    }
-}
-function validarFecha() {
+function validarEdad() {
     let correcto = false;
     let edad = formularios[0]["elements"]["edad"]["value"];
+    c1 = document.getElementById("fecha");
     if (parseInt(edad) >= 18) {
-        document.getElementById("equis5").style.visibility = "hidden";
+        document.getElementById("equis6").style.visibility = "hidden";
         c1.style.border = "2px solid green";
         correcto = true;
     } else {
         c1.style.border = "2px solid red";
         c1.style.animation = "vibrar 0.3s";
-        document.getElementById("equis5").style.visibility = "visible";
+        document.getElementById("equis6").style.visibility = "visible";
         correcto = false;
     }
     return correcto;

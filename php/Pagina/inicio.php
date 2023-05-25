@@ -1,6 +1,3 @@
-<?php
-session_start()
-?>
 <!DOCTYPE html>
 <html>
 
@@ -33,12 +30,31 @@ session_start()
         </a>
         <div class="dropdown">
             <button class="dropbtn"><i class="fa-solid fa-user"></i><br>
-                <?php echo "¡ Hola " . $_SESSION['user']['nombre'] . " !" ?>
-            </button>
-            <div class="dropdown-content">
-                <a href="logout.php">Cerrar Sesion</a>
-            </div>
-        </div>
+                <?php
+                session_start();
+                if(isset($_SESSION['user'])){
+                    if($_SESSION['user']['id_rol'] ==2){
+                        echo "¡ Hola " . $_SESSION['user']['nombre'] . " !" ;
+                        echo "</button>";
+                        echo"<div class='dropdown-content'>";
+                        echo "<a href='logout.php'>Cerrar Sesion</a>";
+                        echo "</div>";
+                    }else{
+                        echo "¡ Hola " . $_SESSION['user']['nombre'] . " !" ;
+                        echo "</button>";
+                        echo"<div class='dropdown-content'>";
+                        echo "<a href='logout.php'>Cerrar Sesion</a>";
+                        echo "<a href='admin.php'>Ir a Admin</a>";
+                        echo "</div>";
+                    }
+                  }else{
+                    echo "¡ Inicia Sesión !";
+                    echo "</button>";
+                    echo"<div class='dropdown-content'>";
+                    echo "<a href='login.php'>Crea tu cuenta</a>";
+                    echo "</div>";
+                  }
+                ?>
     </nav>
     
     <header>
