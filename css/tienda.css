@@ -8,7 +8,7 @@ nav {
     justify-content: center;
     display: flex;
     background-color: rgb(0, 0, 0);
-    height: 79px;
+    height: 78px;
 }
 
 nav a {
@@ -20,7 +20,8 @@ nav li {
     list-style-type: none;
     display: inline-block;
     background-color: rgb(0, 77, 5);
-    padding: 18px;
+    padding: 16px;
+    padding-bottom: 19px;
     color: white;
     align-items: center;
     font-size: 19px;
@@ -224,6 +225,32 @@ address {
     padding: 10px;
 }
 
+::-webkit-scrollbar {
+    width: 16px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: rgb(231, 224, 224);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #105508;
+    border-radius: 7px;
+  }
+  
+  ::-webkit-scrollbar-button:start {
+    background-image: url('../Imagenes/flechaArriba.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: rotate(180deg);
+  }
+  ::-webkit-scrollbar-button:end {
+    background-image: url('../Imagenes/flechaAbajo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 @media screen and (max-width:843px) {
 
     /*El @media lo ponemos para ajustar todo el contenido al tipo de pantalla que se presente*/
@@ -288,8 +315,9 @@ address {
 }
 
 @media (min-width: 702px) and (max-width: 943px) {
-    .cards {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    .container{
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 
