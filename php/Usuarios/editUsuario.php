@@ -31,6 +31,7 @@ $usuario= Database::getusuarioId($id);
 <input type="text" name="direccion" value="<?php echo $usuario['direccion'] ?>" placeholder="Actualiza una direccion">
 <input type="text" name="edad" value="<?php echo $usuario['edad'] ?>" placeholder="Actualiza una edad">
 <input type="text" name="correo_electronico" value="<?php echo $usuario['correo_electronico'] ?>" placeholder="Actualiza un correo electronico">
+<input type="text" name="contraseña" value="<?php echo $usuario['contraseña'] ?>" placeholder="Actualiza una contraseña">
 <input type="text" name="id_rol" value="<?php echo $usuario['id_rol'] ?>" placeholder="Actualiza un rol para el usuario">
  <button type = "submit">Enviar</button>
 </form>

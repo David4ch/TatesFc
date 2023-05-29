@@ -2,7 +2,7 @@
 require_once("../Database/Database.php");
 $resultado0 = Database::getAllUsuarios();
 $resultado1 = Database::getAllProductos();
-$resultado2 = Database::getAllUsuariosProductos();
+$resultado2 = Database::getAllPedidos();
 $resultado3 = Database::getAllRol();
 $resultado4 = Database::getAllJugadores();
 
@@ -153,12 +153,14 @@ if(isset($_SESSION['user'])){
     </table>
     </div>
     <div class="roldiv">
-    <p class="encabezado">ROL</p>
+    <p class="encabezadoRol">ROL</p>
+    <a href='../Rol/createRol.php' class="botonesphp" id="botonarriba">ROL NUEVO</a>
     <table class="container">
         <thead>
             <tr>
                 <th><h1>ID</h1></th>
                 <th><h1>Nombre Rol</h1></th>
+                <th><h1>Acciones</h1></th>
             </tr>
         </thead>
         <tbody>
@@ -167,6 +169,8 @@ if(isset($_SESSION['user'])){
     echo "<tr>";
     echo "<td>" . $fila["id"] . "</td>";
     echo "<td>" . $fila["nombre"] . "</td>";
+    echo "<td> <a class='botonesphp' href='../Rol/deleteRol.php?id=" . $fila['id'] . "'>Eliminar</a>
+    </td>";
     echo "</tr>";
   }
      ?>

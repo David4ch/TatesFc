@@ -151,7 +151,7 @@ $resultado = Database::getAllProductos();
     <div id="cosas">
 
         <a href="https://www.instagram.com/tates.fc/?hl=es">
-            <img class="redes" src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png" alt="Instagram">
+            <img class="redes" src="../../Imagenes/insta.png"  alt="Instagram">
         </a>
         <a href="https://twitter.com/fctates">
             <img class="redes" src="https://cdn-icons-png.flaticon.com/512/4096/4096132.png" alt="Twitter">

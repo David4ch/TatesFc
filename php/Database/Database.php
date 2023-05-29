@@ -31,7 +31,7 @@ class Database
         return $resultado1;
     }
     public static function getUsuarioId($id) {
-        $sql = "SELECT * FROM 5_usuarios WHERE id = $id";
+        $sql = "SELECT * FROM 5_Usuarios WHERE id = $id";
         $resultado = self::conectar()->query($sql);
 
         return $resultado->fetch(PDO::FETCH_ASSOC);
@@ -39,7 +39,7 @@ class Database
     //Funcion que inserta valores en la tabla
     //$Datos recibe los elementos de los ordenadores
     public static function saveUsuario($datos){
-        $sql = "INSERT INTO 5_usuarios (nombre, apellido, numero, direccion, edad, correo_electronico, contraseña ,id_rol) VALUES ('$datos[0]', '$datos[1]', $datos[2],'$datos[3]', $datos[4], '$datos[5]', $datos[6], $datos[7])";
+        $sql = "INSERT INTO 5_usuarios (nombre, apellido, numero, direccion, edad, correo_electronico, contraseña ,id_rol) VALUES ('$datos[0]', '$datos[1]', $datos[2],'$datos[3]', $datos[4], '$datos[5]', '$datos[6]', $datos[7])";
         self::conectar()->exec($sql);
 
     }
@@ -48,7 +48,7 @@ class Database
         self::conectar()->exec($sql);
     }
     public static function updateUsuario($datos) {
-        $sql = "UPDATE 5_usuarios SET nombre = '$datos[1]' , apellido = '$datos[2]', numero= $datos[3], direccion='$datos[4]', edad=$datos[5], correo_electronico = '$datos[6]', id_rol= $datos[7] WHERE id = $datos[0]";
+        $sql = "UPDATE pfc.5_usuarios SET nombre = '$datos[1]' , apellido = '$datos[2]', numero= $datos[3], direccion='$datos[4]', edad=$datos[5], correo_electronico = '$datos[6]', contraseña = '$datos[7]', id_rol= $datos[8] WHERE id = $datos[0]";
         self::conectar()->exec($sql);
     }
     public static function deleteUsuario($id) {
@@ -88,31 +88,31 @@ class Database
 
     }
 
-    //-------------------------------SECCION USUARIOS_PRODUCTOS---------------------------------------------------------------------
-    public static function getAllUsuariosProductos(){
-        $sql = "SELECT * FROM 5_usuario_has_productos";
+    //-------------------------------SECCION PEDIDOS---------------------------------------------------------------------
+    public static function getAllPedidos(){
+        $sql = "SELECT * FROM 5_Pedidos";
         $resultado = self::conectar()->query($sql);
 
         return $resultado;
     }
     public static function getPedidoId($id) {
-        $sql = "SELECT * FROM 5_usuario_has_productos WHERE id = $id";
+        $sql = "SELECT * FROM 5_Pedidos WHERE id = $id";
         $resultado = self::conectar()->query($sql);
 
         return $resultado->fetch(PDO::FETCH_ASSOC);
     }
     public static function savePedido($datos){
-        $sql = "INSERT INTO 5_usuario_has_productos (id_producto, id_usuario, cantidad, fecha_envio, fecha_entrega) VALUES ($datos[0], $datos[1], $datos[2], '$datos[3]', '$datos[4]')";
+        $sql = "INSERT INTO 5_Pedidos (id_producto, id_usuario, cantidad, fecha_envio, fecha_entrega) VALUES ($datos[0], $datos[1], $datos[2], '$datos[3]', '$datos[4]')";
         self::conectar()->exec($sql);
 
     }
     public static function updatePedido($datos) {
-        $sql = "UPDATE 5_usuario_has_productos SET cantidad = $datos[1] WHERE id = $datos[0]";
+        $sql = "UPDATE 5_Pedidos SET cantidad = $datos[1] WHERE id = $datos[0]";
         self::conectar()->exec($sql);
 
     }
     public static function deletePedido($id) {
-        $sql = "DELETE  FROM 5_usuario_has_productos WHERE id = $id";
+        $sql = "DELETE  FROM 5_Pedidos WHERE id = $id";
         self::conectar()->exec($sql);
 
     }
@@ -122,6 +122,15 @@ class Database
         $resultado = self::conectar()->query($sql);
 
         return $resultado;
+    }
+    public static function saveRol($datos){
+        $sql = "INSERT INTO 5_Rol (nombre) VALUES ('$datos[0]')";
+        self::conectar()->exec($sql);
+    }
+    public static function deleteRol($id){
+        $sql = "DELETE  FROM 5_rol WHERE id = $id";
+        self::conectar()->exec($sql);
+
     }
     //-------------------------------SECCION JUGADORES---------------------------------------------------------------------
     public static function getAllJugadores() {
